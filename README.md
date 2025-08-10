@@ -4,6 +4,7 @@
 ## Overview
 This Laravel application showcases casino brands with a responsive web interface and REST API. Built for the BlueWindow PHP Fullstack Developer position, it demonstrates full-stack capabilities with Docker support.
 
+## PLEASE I USE LINUX FOR THE DEVELOPEMNT PROCESS SO IT MIGHT BE DIFFRENT IS YOUR USING WINDOWS ESPECIALLY HWHERE I USE SUDO, FOR SUPER USER IT MIGHT BE DOFFRENT ON WINDOSW
 ## Features
 - **Web Interface**
   - Grid/List view toggle
@@ -12,7 +13,7 @@ This Laravel application showcases casino brands with a responsive web interface
   - RESTful JSON responses
   - Geolocation support
 - **Infrastructure**
-  - Docker-compose setup
+  - Docker-compose setup(YOU SHOULD HAVE OR ALREADY INSALLED DOCKER FOR DESKTOP NO MATTER YOUR OPERATING SYSTEM)
   - MySQL database
   - Redis caching (optional)
 
@@ -20,7 +21,7 @@ This Laravel application showcases casino brands with a responsive web interface
 1. Clone repository:
 ```bash
 git clone https://github.com/Ngwangshalom/topBrands.git
-cd casino-brands
+cd topBrands
 ```
 
 2. Initialize environment:
