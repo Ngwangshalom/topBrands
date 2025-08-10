@@ -21,6 +21,7 @@ Built for the BlueWindow PHP Fullstack Developer position, it demonstrates full-
 ## App Preview
 
 ### Look and Feel of the App:
+![My Docker server running with ease](./screenshots/3.png)
 
 ![Grid Display](./screenshots/1.png)  
 ![List Display](./screenshots/2.png)
