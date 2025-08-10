@@ -27,8 +27,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Fernando422
       MYSQL_DATABASE: topBrands
-      # remove MYSQL_USER root — it's invalid
-      # Optionally, create a normal user
+      # create a normal user IF YOU WANT
       # MYSQL_USER: myuser
       # MYSQL_PASSWORD: mypass
     ports:
