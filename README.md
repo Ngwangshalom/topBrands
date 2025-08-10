@@ -1,24 +1,35 @@
-
 ```markdown
-# Casino Brands App
+# Casino Brands Manager - Technical Test
 
-A simple Laravel application to display and manage casino brands with Docker support.
+## Overview
+This Laravel application showcases casino brands with a responsive web interface and REST API. Built for the BlueWindow PHP Fullstack Developer position, it demonstrates full-stack capabilities with Docker support.
 
-## Quick Start
+## Features
+- **Web Interface**
+  - Grid/List view toggle
+  - Mobile-responsive design
+- **API Endpoints**
+  - RESTful JSON responses
+  - Geolocation support
+- **Infrastructure**
+  - Docker-compose setup
+  - MySQL database
+  - Redis caching (optional)
 
-1. Clone the repo:
+## Installation
+1. Clone repository:
 ```bash
 git clone https://github.com/yourusername/casino-brands.git
 cd casino-brands
 ```
 
-2. Setup environment:
+2. Initialize environment:
 ```bash
 cp .env.example .env
 docker-compose up -d --build
 ```
 
-3. Install dependencies:
+3. Setup application:
 ```bash
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate
@@ -27,42 +38,66 @@ docker-compose exec node npm install
 docker-compose exec node npm run dev
 ```
 
-4. Access the app:  
-   → [http://localhost](http://localhost)
+Access the application at: `http://localhost:8080/brands`
 
-## Features
+## API Documentation
+### Base URL: `http://localhost:8080/api`
 
-- View brands in grid or list layout
-- Filter by star rating
-- Mobile-friendly design
-- Docker-ready development
+### Endpoints:
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/brands` | GET | List all brands |
+| `/brands?min_rating=N` | GET | Filter by minimum rating |
+| `/brands/{id}` | GET | Get specific brand |
 
-## Key Commands
+### Example Request:
+```bash
+curl -X GET "http://localhost:8080/api/brands?min_rating=4" \
+-H "CF-IPCountry: US" \
+-H "Accept: application/json"
+```
 
+### Response Format:
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Brand Name",
+            "rating": 4.5,
+            "bonus": "Welcome bonus",
+            "features": ["live_dealer", "mobile"]
+        }
+    ]
+}
+```
+
+## Development Commands
 | Command | Description |
 |---------|-------------|
 | `docker-compose up -d` | Start containers |
 | `docker-compose down` | Stop containers |
-| `docker-compose exec app php artisan [cmd]` | Run Artisan commands |
-| `docker-compose exec node npm [cmd]` | Run NPM commands |
-
-## Services
-
-- **app**: Laravel (PHP 8.2)
-- **db**: MySQL
-- **node**: Frontend assets
-- **webserver**: Nginx
+| `docker-compose exec app php artisan test` | Run tests |
+| `docker-compose exec node npm run dev` | Frontend development |
+| `docker-compose exec node npm run build` | Production assets |
 
 ## Troubleshooting
-
-If you get permission errors:
+**Permission Issues:**
 ```bash
 sudo chown -R $USER:$USER .
 sudo chmod -R 775 storage bootstrap/cache
 ```
 
-For port conflicts:
+**Port Conflicts:**
 ```bash
 docker-compose down
-sudo lsof -i :80
+sudo lsof -i :8080
+sudo kill -9 <PID>
 ```
+
+## Technical Details
+- **Backend**: Laravel 12, PHP 8.2
+- **Frontend**: Vanilla JS, HTML, Blade, CSS
+- **Database**: MySQL 8
+- **Cache**: Redis
+- **Web Server**: Nginx
