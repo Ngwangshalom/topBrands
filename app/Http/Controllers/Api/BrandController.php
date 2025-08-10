@@ -159,7 +159,6 @@ class BrandController extends Controller
         ]);
     }
 
-    // Add to your Api/BrandController.php
 
 /**
  * Filter brands by minimum rating
