@@ -19,7 +19,7 @@ This Laravel application showcases casino brands with a responsive web interface
 ## Installation
 1. Clone repository:
 ```bash
-git clone https://github.com/yourusername/casino-brands.git
+git clone https://github.com/Ngwangshalom/topBrands.git
 cd casino-brands
 ```
 
@@ -66,7 +66,6 @@ curl -X GET "http://localhost:8080/api/brands?min_rating=4" \
             "name": "Brand Name",
             "rating": 4.5,
             "bonus": "Welcome bonus",
-            "features": ["live_dealer", "mobile"]
         }
     ]
 }
