@@ -19,10 +19,11 @@ This Laravel application showcases casino brands with a responsive web interface
 
 ## App Preview
 
-lOOK AND FEEL OF THE APP:
-[![Grid Display](./screenshots/1.png)](screenshots/1.png)
+## Look and Feel of the App:
 
-[![List Display](./screenshots/2.png)](screenshots/2.png)
+![Grid Display](screenshots/1.png)
+
+![List Display](screenshots/2.png)
 
 
 ## Installation
