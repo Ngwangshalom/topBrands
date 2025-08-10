@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql-db
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql-db
+      DB_PORT: 3306
+      DB_DATABASE: topBrands
+      DB_USERNAME: root
+      DB_PASSWORD: Fernando422
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Fernando422
+      MYSQL_DATABASE: topBrands
+      # remove MYSQL_USER root — it's invalid
+      # Optionally, create a normal user
+      # MYSQL_USER: myuser
+      # MYSQL_PASSWORD: mypass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
