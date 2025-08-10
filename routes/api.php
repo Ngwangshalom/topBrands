@@ -34,7 +34,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // API Version 1 Routes
 Route::prefix('v1')->group(function () {
-    // Brand Resource Routes
     Route::apiResource('brands', BrandController::class)->only([
         'index', 'show'
     ]);
